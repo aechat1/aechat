@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>AE CHAT</title>
+    <!-- استدعاء المكتبة أولاً -->
+    <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #000; height: 100vh; }
+        #root { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        // دالة البدء التي تعمل بعد تحميل الصفحة بالكامل
+        window.onload = function() {
+            const kitToken = "04AAAAAGo4sFkADGuCexLO63urDoVQfgCuMYdZLJ+l85byBt+5vMhMjb8IEzYjKNOjEqze++8RLZ6d31eqS5PsTneg/TyiM3yEO4ewhxtp1MsMYnECdF1btZiq0CBt4/c+ip/PWt1NcA/1kG5telnwsbTO98xuszGMdOeqqeVu5tgZr9pAQrlz927m5502Aas0UGftWJbAiMpFiBMSjDuEqgdbeJ3BK2R75V9/tRX/8K9TXR9z31SndMXqYv3YQdVMNl+AFTH+AQ==";
+            
+            const zp = ZegoUIKitPrebuilt.create(kitToken);
+            zp.joinRoom({
+                container: document.querySelector("#root"),
+                scenario: { mode: ZegoUIKitPrebuilt.VideoConference },
+            });
+        };
+    </script>
+</body>
+</html>
